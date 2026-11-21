@@ -68,7 +68,7 @@ For any entered or generated balance $B$ and item list, the application evaluate
 1. Push your HTML file (renamed to `index.html`) and `README.md` to a public GitHub repository.
 2. Go to **Settings → Pages** in your repository.
 3. Under **Build and deployment**, select **Deploy from a branch**, pick `main` and `/ (root)`, and click **Save**.
-4. Your site will be live at `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`.
+4. Your site will be live at <https://charansaiteja-m.github.io/DAA_Project/>.
 
 ---
 
