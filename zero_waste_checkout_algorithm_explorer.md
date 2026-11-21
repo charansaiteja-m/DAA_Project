@@ -2,8 +2,8 @@
 
 An interactive, single-file web application that explores the **Gift Card Zero-Waste Checkout** problem (0/1 Subset-Sum Optimization) across four foundational algorithmic paradigms—comparing their logic, asymptotic complexities, live execution metrics, and runnable Python 3 implementations.
 
-- **Live Demo:** [Add Your Deployed URL Here]
-- **Repository:** [Add Your GitHub Repository URL Here]
+- **Live Demo:** <https://charansaiteja-m.github.io/DAA_Project/>
+- **Repository:** <https://github.com/charansaiteja-m/DAA_Project>
 - **Author:** M Charan Sai Teja
 
 ---
@@ -60,7 +60,7 @@ For any entered or generated balance $B$ and item list, the application evaluate
 ### Run Locally
 1. Clone or download this repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   git clone https://github.com/charansaiteja-m/DAA_Project.git
    ```
 2. Open `index.html` (or `Zero-Waste Checkout · Algorithm Explorer.html`) directly in any modern web browser—no build tools, package managers, or backend servers required.
 
