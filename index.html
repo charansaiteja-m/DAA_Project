@@ -133,7 +133,7 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <div class="modal-top">
 <h2>zero_waste_checkout_algorithm_explorer.md</h2>
 <div class="modal-actions">
-<a class="btn-s btn-link" href="zero_waste_checkout_algorithm_explorer.md" target="_blank" rel="noopener">Open Raw File</a>
+<a class="btn-s btn-link" href="https://raw.githubusercontent.com/charansaiteja-m/DAA_Project/main/zero_waste_checkout_algorithm_explorer.md" target="_blank" rel="noopener">Open Raw File</a>
 <button class="btn-s" id="readmeClose" type="button">Close</button>
 </div>
 </div>
@@ -439,7 +439,29 @@ function animateCounts(){
 }
 
 /* Connected to zero_waste_checkout_algorithm_explorer.md */
+const PROJECT_LINKS = ['https://charansaiteja-m.github.io/DAA_Project/', 'https://github.com/charansaiteja-m/DAA_Project'];
+
+function showReadme(source) {
+  const body = $('readmeBody');
+  body.replaceChildren();
+  for (const part of source.split(/(<https?:\/\/[^>\s]+>)/g)) {
+    const url = part.slice(1, -1);
+    if (PROJECT_LINKS.includes(url)) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.textContent = url;
+      link.style.color = 'inherit';
+      body.append(link);
+    } else {
+      body.append(part);
+    }
+  }
+}
+
 const FALLBACK_DOC = `# Zero-Waste Checkout · Algorithm Explorer
+
+Live Demo: <https://charansaiteja-m.github.io/DAA_Project/>
+Repository: <https://github.com/charansaiteja-m/DAA_Project>
 
 Given a prepaid gift card balance B and a list of items (each purchasable at most once), select a subset whose total price gets as close to B as possible without exceeding it.
 
@@ -458,11 +480,11 @@ Given a prepaid gift card balance B and a list of items (each purchasable at mos
 $('readmeBtn').addEventListener('click', async () => {
   $('readme').showModal();
   try {
-    const res = await fetch(DOC_FILE);
+    const res = await fetch(DOC_FILE + '?v=6702c31', { cache: 'no-cache' });
     if (!res.ok) throw new Error('Fetch failed');
-    $('readmeBody').textContent = await res.text();
+    showReadme(await res.text());
   } catch {
-    $('readmeBody').textContent = FALLBACK_DOC;
+    showReadme(FALLBACK_DOC);
   }
 });
 $('readmeClose').addEventListener('click', () => $('readme').close());
